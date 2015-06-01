@@ -59,7 +59,7 @@ module AWS
         end
 
 
-        # Public: Provides a configuration option that sets the default_expires in milliseconds
+        # Public: Provides a configuration option that sets the default_expires in seconds
         #
         # Examples
         #
@@ -74,7 +74,7 @@ module AWS
 
         # Public: Provides an accessor to the default_expires value
         #
-        # Returns an Integer value indicating the current setting
+        # Returns an Integer value indicating the current setting (seconds)
         def default_expires
           @default_expires ||= 3600
         end
@@ -99,7 +99,7 @@ module AWS
       #   AWS::CF::Signer.configure do |config|
       #     config.key_path = "/path/to/yourkeyfile.pem"
       #     config.key_pair_id  = "XXYYZZ"
-      #     config.default_expires = 3600
+      #     config.default_expires = 3600 # 1hr in seconds
       #   end
       #
       # Returns nothing.
