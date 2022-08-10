@@ -34,7 +34,7 @@ module AWS
         #
         # Returns nothing.
         def key_path=(path)
-          raise ArgumentError.new("The signing key could not be found at #{path}") unless File.exists?(path)
+          raise ArgumentError.new("The signing key could not be found at #{path}") unless File.exist?(path)
           @key_path = path
           self.key=(File.readlines(path).join(""))
         end
